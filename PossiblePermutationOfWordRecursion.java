@@ -23,6 +23,6 @@ public class PossiblePermutationOfWordRecursion {
         String word = "ABC";
         Set<String> result = new HashSet<>();
         Set<String> permutation = wordPermutation(word, result, word.length());
-        System.out.println();
+        System.out.println(permutation);
     }
 }
