@@ -10,10 +10,10 @@ public class MissingNo {
     static int xor(int[] array){
         int xor = 0;
         int n = array.length+1;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i<=n; i++){
             xor ^= i;
         }
-        for (int num : arr) {
+        for(int num : array){
             xor ^= num;
         }
         return xor;
