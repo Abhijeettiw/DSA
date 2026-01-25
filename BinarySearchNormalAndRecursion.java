@@ -21,7 +21,7 @@ public class BinarySearchNormalAndRecursion {
         int[] array = {1, 4, 2, 4, 10, 7, 5, 4, 16, 58, 79, 23, 54, 12, 6, 9, 10};
         Arrays.sort(array);
         System.out.println(Arrays.toString(array));
-        int target = 196;
+        int target = 16;
         int left = 0;
         int right = array.length - 1;
         while (left <= right) {
@@ -33,5 +33,6 @@ public class BinarySearchNormalAndRecursion {
             else right = mid - 1;
         }
         System.out.println(binarySearchRecursion(0,array.length-1,target,array));
+        System.out.println(Arrays.binarySearch(array,target));
     }
 }
