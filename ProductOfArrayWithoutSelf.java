@@ -38,7 +38,7 @@ public class ProductOfArrayWithoutSelf {
         int[] r_array = new int[nums.length];
         int l_index = 0;
         int r_index = nums.length - 1;
-        while (l_index < nums.length || r_index > 0) {
+        while (l_index < nums.length || r_index >= 0) {
             if(l_index == 0 || r_index == nums.length-1){
                 l_array[l_index] = 1;
                 r_array[r_index] = 1;
