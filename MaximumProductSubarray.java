@@ -1,10 +1,10 @@
 public class MaximumProductSubarray {
     public static void main(String[] args) {
-//        int[] array = {3, 5, -4, 5, 8};
+        int[] array = {3, 5, -4, 5, 8};
 //        int[] array = {-2,0,-1};
 //        int[] array = {-1, -1};
 //        int[] array = {-2,-3,-1};
-        int[] array = {2,3,-2,4};
+//        int[] array = {2,3,-2,4};
 //        int[] array = {3, 5, -4, 5, 8,-5};
         int result = array[0];
         int currentPosProduct = array[0];
