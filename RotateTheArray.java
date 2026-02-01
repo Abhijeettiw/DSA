@@ -59,7 +59,8 @@ public class RotateTheArray {
     Step 3 - reverse first k element & last k element separately
      */
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
-        int rotation = 10;
+//        int rotation = 5;
+        int rotation = 15;
 //        Solution 1
         int[] result = rotateArray(arr, rotation);
         System.out.println(Arrays.toString(result));
