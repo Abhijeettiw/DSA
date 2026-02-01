@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 public class RotateTheArray {
+    //    Solution 1
     static int[] reverse(int[] arr) {
         for (int i = 0; i < arr.length / 2; i++) {
             int x = arr[i];
@@ -38,6 +39,18 @@ public class RotateTheArray {
         return resultArr;
     }
 
+    //    Solution 2
+    static int[] reverseArray(int[] arr, int start, int end) {
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+        return arr;
+    }
+
     public static void main(String[] args) {
     /*
     Logic
@@ -47,7 +60,18 @@ public class RotateTheArray {
      */
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
         int rotation = 10;
+//        Solution 1
         int[] result = rotateArray(arr, rotation);
         System.out.println(Arrays.toString(result));
+
+//        Solution 2
+        int[] arr2 = {1, 2, 3, 4, 5, 6, 7};
+
+        if (rotation > arr2.length)
+            rotation = rotation % arr2.length;
+        reverseArray(arr2, 0, arr2.length - 1);
+        reverseArray(arr2, 0, rotation - 1);
+        reverseArray(arr2, rotation , arr2.length - 1);
+        System.out.println(Arrays.toString(arr2));
     }
 }
