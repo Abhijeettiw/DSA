@@ -1,3 +1,5 @@
+package Recursion;
+
 public class PalindromeRecursion {
     static Boolean isPalindrome(String str, Integer idx) {
         Boolean isPalin = Boolean.TRUE;

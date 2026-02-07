@@ -1,3 +1,5 @@
+package Recursion;
+
 public class UppercaseLetterInStringRecursion {
     static String singleUpperCase(String str, String res) {
         if (!str.isEmpty()) {

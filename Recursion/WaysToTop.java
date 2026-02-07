@@ -1,3 +1,5 @@
+package Recursion;
+
 public class WaysToTop {
     static int recursion(int first, int next, int steps, int result) {
         if (steps > 0) {

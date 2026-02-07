@@ -1,3 +1,5 @@
+package Recursion;
+
 public class FactorialRecursion {
     static Long factorial(Integer num,Long res){
         if(num < 1){
