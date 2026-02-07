@@ -40,13 +40,13 @@ public class KClosest {
             if (dist(arr[j], n) < pivot) {
                 i++;
                 int[] temp = arr[i];
-                arr[j] = arr[i];
-                arr[i] = temp;
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
         }
         int[] temp = arr[i + 1];
-        arr[high] = arr[i + 1];
-        arr[i + 1] = temp;
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
         return i + 1;
     }
 
@@ -59,7 +59,8 @@ public class KClosest {
     }
 
     public static void main(String[] args) {
-        int[][] arr = {{1, 3}, {-2, 2}, {5, 8}};
+        int[][] arr = {{1, 3}, {-2, 2}, {2, -2}};
+//        int[][] arr = {{1, 3}, {-2, 2}, {5, 8}};
         int n = 2;
         int[][] heapRes = kClosestHeap(arr, n);
         for (int[] hr : heapRes) {
