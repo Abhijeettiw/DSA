@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.PriorityQueue;
+import java.util.Random;
 
 public class KClosest {
     //    Using heap
@@ -32,7 +33,8 @@ public class KClosest {
     }
 
     static int partition(int[][] arr, int low, int high, int n) {
-        int pivot = dist(arr[high], n);
+        int pivotIndex = low + new Random().nextInt(high - low + 1);
+        int pivot = dist(arr[pivotIndex], n);
         int i = low - 1;
         for (int j = 0; j < arr.length; j++) {
             if (dist(arr[j], n) < pivot) {
