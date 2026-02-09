@@ -9,7 +9,7 @@ public class FrequencyOfWordAscFrequencyAndLexicographical {
         String str = "worfbwcwohjgwojwpkwpfracnvbd";
         Map<String, Long> collect = Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream().sorted(
-                        Map.Entry.<String, Long>comparingByKey()
+                        Map.Entry.<String, Long>comparingByValue()
                                 .thenComparing(Map.Entry.comparingByKey()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> a, LinkedHashMap::new));
 
