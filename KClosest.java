@@ -23,7 +23,7 @@ public class KClosest {
         return result;
     }
 
-    //    Quick sort
+    //    Quick sort (not accurate)
     static int dist(int[] innerArr, int n) {
         int res = 0;
         for (int i = 0; i < n; i++) {
