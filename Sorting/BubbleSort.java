@@ -7,6 +7,7 @@ import java.util.Arrays;
         - Comparing each element to the next one it order is not present swap them.
         - Sorting happens from end
         - After each iteration size of iteration decreased by 1
+        - Time Complexity n*n
         - Example
             input = 10, 40, 20, 50, 25, 15    iteration will be 0-4
             step 1
