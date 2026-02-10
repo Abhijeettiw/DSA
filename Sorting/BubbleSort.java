@@ -20,7 +20,7 @@ public class BubbleSort {
         int[] arr = {10, 40, 20, 50, 25, 15};
         int n = arr.length - 1;
         for (int j = 0; j < n; j++) {
-            for (int i = 0; i < n-j; i++) {
+            for (int i = 0; i < n - j; i++) {
                 if (arr[i] > arr[i + 1]) {
                     int temp = arr[i];
                     arr[i] = arr[i + 1];
