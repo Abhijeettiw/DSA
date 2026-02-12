@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /*
     Theory
-        - Select the smallest element from unsorted part and place it on first position.
+        - Select the small element than current element from unsorted part and place it on first position.
         - Sorting starts from start.
         - After each iteration size of comparison iteration decreased by 1.
         - Time Complexity n*n
@@ -23,7 +23,7 @@ public class SelectionSort {
         int[] arr = {15, 20, 5, 45, 30, 10};
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] > arr[i]) {
+                if (arr[j] < arr[i]) {
                     int temp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = temp;
