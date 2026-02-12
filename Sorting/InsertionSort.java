@@ -15,8 +15,8 @@ import java.util.Arrays;
                 5, 15, 19, 40, 25       iteration will be 3-4
             step 3
                 5, 15, 19, 25, 40      iteration will be 4-4
-
 */
+
 public class InsertionSort {
     public static void main(String[] args) {
         int[] arr = {5, 19, 40, 15, 25};
