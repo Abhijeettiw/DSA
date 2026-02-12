@@ -14,6 +14,10 @@ import java.util.Arrays;
                 10, 20, 40, 25, 15, 50        iteration will be 0-3
             step 2
                 10, 20, 25, 15, 40, 50        iteration will be 0-2
+            step 3
+                10, 20, 15, 25, 40, 50        iteration will be 0-1
+            step 3
+                10, 15, 20, 25, 40, 50        iteration will be 0-1
             Hence input sorted further iteration will not effect input
 */
 public class BubbleSort {
