@@ -1,8 +1,6 @@
-package Sorting;
-
 import java.util.Arrays;
 
-public class MergeSort {
+public class MergingTwoSortedArray {
     public static void main(String[] args) {
         int[] a1 = {1, 3, 5, 6,11,19};
         int n1 = 0;
