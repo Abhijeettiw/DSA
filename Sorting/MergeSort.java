@@ -6,7 +6,9 @@ package Sorting;
         - Divide array into 2 parts.
         - Keep on dividing array until size of each array is 1.
             eg: {2,1,4,2,5,3,6}
-                {2}{1}{4}{2}{5}{3}{6} - end result of dividing or array
+                {2,1,4},{2,5,3,6}
+                {2},{1,4},{2,5},{3,6}
+                {2},{1},{4},{2},{5},{3},{6} - end result of dividing or array
         - Merge the arrays in to one by merge algorithm.
             eg: {2}{1}{4}{2}{5}{3}{6}
                 {1,2}{2,4}{3,5},{6}
@@ -65,8 +67,8 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {2,1,4,2,5,3,6};
-//        int[] arr = {1, 2, 4, 6, 3, 1, 2, 4, 5, 11, 4, 6, 13, 43, 23, 7};
+//        int[] arr = {2,1,4,2,5,3,6};
+        int[] arr = {1, 2, 4, 6, 3, 1, 2, 4, 5, 11, 4, 6, 13, 43, 23, 7};
         System.out.println(Arrays.toString(mergeRecursion(arr)));
     }
 }
