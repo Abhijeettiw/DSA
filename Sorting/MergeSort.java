@@ -67,7 +67,7 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-//        int[] arr = {2,1,4,2,5,3,6};
+//        int[] arr = {2,1,4,2,5,3,-6};
         int[] arr = {1, 2, 4, 6, 3, 1, 2, 4, 5, 11, 4, 6, 13, 43, 23, 7};
         System.out.println(Arrays.toString(mergeRecursion(arr)));
     }
