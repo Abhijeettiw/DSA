@@ -2,7 +2,7 @@ package Sorting;
 
 /*
     Theory
-        - Solved by recursion
+        - Solved by recursion and divide & concur tech.
         - Divide array into 2 parts.
         - Keep on dividing array until size of each array is 1.
             eg: {2,1,4,2,5,3,6}
