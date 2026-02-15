@@ -20,7 +20,7 @@ import java.util.Arrays;
 */
 public class CountingSort {
     public static void main(String[] args) {
-        int[] arr = {2, 1, 4, 2, 5, 3, -6};
+        int[] arr = {2, 1, 4, 2, 5, -3, 6, 0};
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
         for (int i : arr) {
