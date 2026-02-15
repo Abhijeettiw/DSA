@@ -15,8 +15,8 @@ import java.util.Arrays;
             - Iterate input array for reverse direction
             - Place the element in temporary array on positon taken from cumulative array decreased by 1.
             - eg: {1,6,5,3,2,1} - array
-                  {0,1,2,1,0,1,1} - frequency array
-                  {0,1,3,4,4,5,6} - cumulative array for position
+                  {1(fre 1),2(fre 2),1(fre 3),0(fre 4),1(fre 5),1(fre 6)} - frequency array
+                  {1(pos 1),3(pos 2),4(pos 3),4(pos 4),5(pos 5),6(pos 6)} - cumulative array for position
 */
 public class CountingSort {
     public static void main(String[] args) {
