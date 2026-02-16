@@ -7,6 +7,7 @@ import java.util.Arrays;
         - Bubble, Selection, Insertion, Merge & Quick sort are comparison based sort.
         - Lower limit of time complexity for comparison based is nLog(n).
         - Counting sort is non comparison based hence time complexity is linear.
+        - Counting sort is stable but not preferred because consumption of more memory.
         - Algorithm
             - Calculate max & min of array
             - Create a frequency array of size (max-min+1) & record the frequency at the index in frequency array
@@ -45,8 +46,6 @@ public class CountingSort {
                 cumArr[j] = cumArr[j - 1] + freqArr[j];
             }
         }
-        System.out.println(Arrays.toString(freqArr));
-        System.out.println(Arrays.toString(cumArr));
         int[] res = new int[arr.length];
         for (int k = arr.length - 1; k >= 0; k--) {
             int fPos = arr[k] - min;
