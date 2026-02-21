@@ -20,6 +20,19 @@ public class ThirdHighestInFrequencyInArray {
         return value;
     }
 
+    static int basicMethod(Integer[] arr) {
+        Map<Integer, Integer> count = new HashMap<>();
+        for (int i : arr) {
+            count.computeIfPresent(i, (k, v) -> v + 1);
+            count.computeIfAbsent(i, (v) -> 1);
+        }
+        LinkedList<Map.Entry<Integer, Integer>> list = new LinkedList<>(count.entrySet());
+        list.sort((a, b) -> b.getValue() - a.getValue());
+        if (list.size() > 3) {
+            return list.get(2).getKey();
+        } else return list.getLast().getKey();
+    }
+
     public static void main(String[] args) {
         Integer[] arr = {1, 2, 3, 4, 3, 2, 1, 4, 5, 6, 23, 4, 5, 3, 1, 4, 5, 6, 4, 3, 1};
         Map<Integer, Long> collect1 = new HashMap<>();
@@ -34,5 +47,6 @@ public class ThirdHighestInFrequencyInArray {
         }
 //        -----
         System.out.println(method(arr));
+        System.out.println(basicMethod(arr));
     }
 }
