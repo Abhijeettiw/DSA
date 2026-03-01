@@ -1,6 +1,12 @@
 package LinkedList;
 
 public class LinkedListCycle {
+/*
+    Hair & Tortoise algorithm 1 slow pointer & 1 fast pointer
+    - Slow pointer takes one step
+    - Fast pointer takes 2 steps
+    - If cycle is present Slow & Fast pointer will meet at a certain point.
+ */
     public static void main(String[] args) {
         ListNode<Integer> intersectionNode = new ListNode<>(40);
         ListNode<Integer> l1 = new ListNode<>(10);
