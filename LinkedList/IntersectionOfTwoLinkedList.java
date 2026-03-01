@@ -42,6 +42,8 @@ public class IntersectionOfTwoLinkedList {
             c2 = (ListNode<Integer>) c2.next;
         }
         System.out.println(resIntersection == null ? null : resIntersection.data);
+
+//        Can also accomplished by hashset but it will cost more memory
     }
 
 }
