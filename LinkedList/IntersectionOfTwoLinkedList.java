@@ -28,14 +28,15 @@ public class IntersectionOfTwoLinkedList {
         ListNode<Integer> c1 = (ListNode<Integer>) biggerList.head;
         ListNode<Integer> c2 = (ListNode<Integer>) smallerList.head;
         ListNode<Integer> resIntersection = null;
-        while (sizeDiff > 0) {
-            c1 = (ListNode<Integer>) c1.next;
-            sizeDiff--;
-        }
+        outer:
         while (c1 != null && c2 != null) {
+            while (sizeDiff > 0) {
+                c1 = (ListNode<Integer>) c1.next;
+                sizeDiff--;
+            }
             if (c1.equals(c2)) {
                 resIntersection = c1;
-                break ;
+                break outer;
             }
             c1 = (ListNode<Integer>) c1.next;
             c2 = (ListNode<Integer>) c2.next;
