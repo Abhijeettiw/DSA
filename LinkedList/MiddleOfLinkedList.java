@@ -3,7 +3,6 @@ package LinkedList;
 
 public class MiddleOfLinkedList {
     static ListNode<Integer> slowFastMethod(ListNode<Integer> list) {
-        if (list == null) return null;
         ListNode<Integer> slow = (ListNode<Integer>) list.head;
         ListNode<Integer> fast = (ListNode<Integer>) list.head;
         while (fast != null && fast.next != null) {
