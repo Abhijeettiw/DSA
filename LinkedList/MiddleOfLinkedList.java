@@ -10,7 +10,7 @@ public class MiddleOfLinkedList {
 //        l1.addNode(60);
         int size = l1.size();
         int i = 0;
-        int mid = size % 2 == 0 ? size / 2 : size / 2 + 1;
+        int mid = size / 2 + 1;
         ListNode<Integer> midNode = null;
         ListNode<Integer> cur = (ListNode<Integer>) l1.head;
         while (cur != null && i < mid) {
