@@ -6,14 +6,11 @@ public class MiddleOfLinkedList {
         if (list == null) return null;
         ListNode<Integer> slow = (ListNode<Integer>) list.head;
         ListNode<Integer> fast = (ListNode<Integer>) list.head;
-        while (slow != null) {
+        while (fast != null && fast.next != null) {
             slow = (ListNode<Integer>) slow.next;
             fast = (ListNode<Integer>) fast.next.next;
-            if (fast == null || fast.next == null) {
-                return slow;
-            }
         }
-        return null;
+        return slow;
     }
 
     public static void main(String[] args) {
