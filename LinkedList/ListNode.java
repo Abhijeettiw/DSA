@@ -56,23 +56,19 @@ public class ListNode<T> {
     }
 
     void printNode() {
-        if (this.head != null) {
-            ListNode<?> cur = this.head;
-            while (cur != null) {
-                System.out.println(cur.data);
-                cur = cur.next;
-            }
-        } else System.out.println("null");
+        ListNode<?> cur = this.head;
+        while (cur != null) {
+            System.out.println(cur.data);
+            cur = cur.next;
+        }
     }
 
     void printNodeReverse() {
-        if (this.tail != null) {
-            ListNode<?> cur = this.tail;
-            while (cur != null) {
-                System.out.println(cur.data);
-                cur = cur.previous;
-            }
-        } else System.out.println("null");
+        ListNode<?> cur = this.tail;
+        while (cur != null) {
+            System.out.println(cur.data);
+            cur = cur.previous;
+        }
     }
 
 
