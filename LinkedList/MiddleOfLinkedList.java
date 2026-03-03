@@ -1,6 +1,21 @@
 package LinkedList;
 
+
 public class MiddleOfLinkedList {
+    static ListNode<Integer> slowFastMethod(ListNode<Integer> list) {
+        if (list == null) return null;
+        ListNode<Integer> slow = (ListNode<Integer>) list.head;
+        ListNode<Integer> fast = (ListNode<Integer>) list.head;
+        while (slow != null) {
+            slow = (ListNode<Integer>) slow.next;
+            fast = (ListNode<Integer>) fast.next.next;
+            if (fast == null || fast.next == null) {
+                return slow;
+            }
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         ListNode<Integer> l1 = new ListNode<>(10);
         l1.addNode(20);
@@ -21,5 +36,7 @@ public class MiddleOfLinkedList {
             cur = (ListNode<Integer>) cur.next;
         }
         System.out.println(midNode.data);
+        ListNode<Integer> midNode2 = slowFastMethod(l1);
+        System.out.println(midNode2.data);
     }
 }
