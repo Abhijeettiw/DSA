@@ -2,7 +2,7 @@ package LinkedList;
 
 public class RemovingNthNodeFromEnd {
     static ListNode<Integer> removeNthFromEnd(ListNode<Integer> list, int n) {
-        if (n > -1) {
+        if (n > 0) {
             if (n >= list.size() - 1) {
                 n = list.size() - 1;
             } else {
@@ -31,7 +31,7 @@ public class RemovingNthNodeFromEnd {
         l1.addNode(50);
         l1.addNode(60);
 
-        ListNode<Integer> removedList = removeNthFromEnd(l1, 2);
+        ListNode<Integer> removedList = removeNthFromEnd(l1, 1);
         System.out.println(removedList != null ? removedList.data : null);
     }
 }
