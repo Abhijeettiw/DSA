@@ -13,6 +13,7 @@ public class RemovingNthNodeFromEnd {
                 if (n == 1) {
                     ListNode<Integer> temp = (ListNode<Integer>) cur.next;
                     cur.next = cur.next.next;
+                    cur.next.previous = cur;
                     temp.next = null;
                     return temp;
                 }
@@ -31,7 +32,9 @@ public class RemovingNthNodeFromEnd {
         l1.addNode(50);
         l1.addNode(60);
 
-        ListNode<Integer> removedList = removeNthFromEnd(l1, 1);
+        ListNode<Integer> removedList = removeNthFromEnd(l1, 2);
         System.out.println(removedList != null ? removedList.data : null);
+        l1.printNode();
+        l1.printNodeReverse();
     }
 }
