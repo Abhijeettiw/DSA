@@ -1,7 +1,7 @@
 package LinkedList;
 
 public class ReversingSinglyLinkedList {
-    static ListNode<Integer> reverseLinkedList(ListNode<Integer> list) {
+    static ListNode<Integer> reverseLinkedList1(ListNode<Integer> list) {
         ListNode<Integer> cur = (ListNode<Integer>) list.head;
         ListNode<Integer> result = null;
         while (cur != null) {
@@ -13,15 +13,27 @@ public class ReversingSinglyLinkedList {
         return result;
     }
 
-    static ListNode<Integer> reverseLinkedListRecursion(ListNode<Integer> list) {
-        if(list == null || list.next == null){
-            return list;
+    static ListNode<Integer> reverseLinkedList2(ListNode<Integer> list) {
+        ListNode<Integer> cur = (ListNode<Integer>) list.head;
+        ListNode<Integer> prev = null;
+        while (cur != null) {
+            ListNode<Integer> next = (ListNode<Integer>) cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
         }
-        ListNode<Integer> newHead = reverseLinkedListRecursion((ListNode<Integer>) list.next);
-        list.next.next = list;
-        list.next = null;
-        return newHead;
+        return prev;
     }
+
+//    static ListNode<Integer> reverseLinkedListRecursion(ListNode<Integer> list) {
+//        if (list == null || list.next == null) {
+//            return list;
+//        }
+//        ListNode<Integer> newHead = reverseLinkedListRecursion((ListNode<Integer>) list.next);
+//        list.next.next = list;
+//        list.next = null;
+//        return newHead;
+//    }
 
     public static void main(String[] args) {
         ListNode<Integer> l1 = new ListNode<>(10);
@@ -32,10 +44,13 @@ public class ReversingSinglyLinkedList {
         l1.addNode(60);
         l1.addNode(70);
         l1.addNode(80);
-        ListNode<Integer> reverseList = reverseLinkedList(l1);
-        reverseList.printNode();
-        ListNode<Integer> reverseLinkedListWithRecursion = reverseLinkedListRecursion(l1);
+        ListNode<Integer> reverseList1 = reverseLinkedList1(l1);
+        reverseList1.printNode();
+//        ListNode<Integer> reverseLinkedListWithRecursion = reverseLinkedListRecursion(l1);
         System.out.println("-------");
-        reverseLinkedListWithRecursion.printNode();
+//        reverseLinkedListWithRecursion.printNode();
+        System.out.println("--------");
+        ListNode<Integer> reverseList2 = reverseLinkedList2(l1);
+        reverseList2.printNode();
     }
 }

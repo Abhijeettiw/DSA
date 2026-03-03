@@ -1,14 +1,26 @@
 package LinkedList;
 
 public class PalindromeLinkedList {
+//    static ListNode<Integer> reverseRecursion(ListNode<Integer> list) {
+//        if (list == null || list.next == null) {
+//            return list;
+//        }
+//        ListNode<Integer> newHead = reverseRecursion((ListNode<Integer>) list.next);
+//        list.next.next = list;
+//        list.next = null;
+//        return newHead;
+//    }
+
     static ListNode<Integer> reverse(ListNode<Integer> list) {
-        if (list == null || list.next == null) {
-            return list;
+        ListNode<Integer> cur = (ListNode<Integer>) list.head;
+        ListNode<Integer> prev = null;
+        while (cur!=null){
+            ListNode<Integer> next = (ListNode<Integer>) cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
         }
-        ListNode<Integer> newHead = reverse((ListNode<Integer>) list.next);
-        list.next.next = list;
-        list.next = null;
-        return newHead;
+        return prev;
     }
 
     public static void main(String[] args) {
