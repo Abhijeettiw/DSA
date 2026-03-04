@@ -59,6 +59,9 @@ public class AddingTwoLinkedList {
                 c2 = (ListNode<Integer>) c2.next;
             }
         }
+        if (carry > 0) {
+            res.addNode(carry);
+        }
         ListNode<Integer> resReverse = reverse(res);
         resReverse.printNode();
     }
