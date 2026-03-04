@@ -12,7 +12,11 @@ public class RemovingNthNodeFromEnd {
             n = n + 1;
             ListNode<Integer> slow = (ListNode<Integer>) list.head;
             ListNode<Integer> fast = (ListNode<Integer>) list.head;
-            while (n > 0 && fast != null) {
+            while (n > 0 ) {
+                if(fast == null){
+                    list.head = list.head.next;
+                    return (ListNode<Integer>) list.head;
+                }
                 fast = (ListNode<Integer>) fast.next;
                 n--;
             }
