@@ -8,28 +8,27 @@ public class RemovingNthNodeFromEnd {
             - Fast will be moved n+1 times at start.
             - Both fast & slow will move one step until fast reaches to null
         */
-        if(n>0) {
-            n = n + 1;
-            ListNode<Integer> slow = (ListNode<Integer>) list.head;
-            ListNode<Integer> fast = (ListNode<Integer>) list.head;
-            while (n > 0 ) {
-                if(fast == null){
-                    list.head = list.head.next;
-                    return (ListNode<Integer>) list.head;
-                }
-                fast = (ListNode<Integer>) fast.next;
-                n--;
+        n = n + 1;
+        ListNode<Integer> slow = (ListNode<Integer>) list.head;
+        ListNode<Integer> fast = (ListNode<Integer>) list.head;
+        while (n > 0) {
+            if (fast == null) {
+                ListNode<Integer> temp = (ListNode<Integer>) list.head;
+                list.head = list.head.next;
+                temp.next = null;
+                return temp;
             }
-            while (fast != null) {
-                slow = (ListNode<Integer>) slow.next;
-                fast = (ListNode<Integer>) fast.next;
-            }
-            ListNode<Integer> temp = (ListNode<Integer>) slow.next;
-            slow.next = slow.next.next;
-            temp.next = null;
-            return temp;
+            fast = (ListNode<Integer>) fast.next;
+            n--;
         }
-        return null;
+        while (fast != null) {
+            slow = (ListNode<Integer>) slow.next;
+            fast = (ListNode<Integer>) fast.next;
+        }
+        ListNode<Integer> temp = (ListNode<Integer>) slow.next;
+        slow.next = slow.next.next;
+        temp.next = null;
+        return temp;
     }
 
     static ListNode<Integer> removeNthFromEnd(ListNode<Integer> list, int n) {
@@ -63,7 +62,7 @@ public class RemovingNthNodeFromEnd {
 
 //        ListNode<Integer> removedList = removeNthFromEnd(l1, -9);
 //        System.out.println(removedList != null ? removedList.data : null);
-        ListNode<Integer> removedList1 = removeNth(l1, 1);
+        ListNode<Integer> removedList1 = removeNth(l1, 8);
         System.out.println(removedList1 != null ? removedList1.data : null);
         System.out.println("---------");
         l1.printNode();
