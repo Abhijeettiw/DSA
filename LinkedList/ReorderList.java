@@ -20,24 +20,24 @@ public class ReorderList {
         l1.addNode(6);
         ListNode<Integer> l11 = null;
         ListNode<Integer> l12 = null;
-        int count = 1;
-        ListNode<Integer> c1 = (ListNode<Integer>) l1.head;
-        while (c1 != null) {
-            if (count % 2 == 0) {
-                if (l12 == null) {
-                    l12 = new ListNode<>(c1.data);
-                } else {
-                    l12.addNode(c1.data);
-                }
-            } else {
+        ListNode<Integer> s = (ListNode<Integer>) l1.head;
+        ListNode<Integer> f = (ListNode<Integer>) l1.head;
+        while (s != null) {
+            if (f != null && f.next != null) {
                 if (l11 == null) {
-                    l11 = new ListNode<>(c1.data);
+                    l11 = new ListNode<>(s.data);
                 } else {
-                    l11.addNode(c1.data);
+                    l11.addNode(s.data);
+                }
+                f = (ListNode<Integer>) f.next.next;
+            } else {
+                if (l12 == null) {
+                    l12 = new ListNode<>(s.data);
+                } else {
+                    l12.addNode(s.data);
                 }
             }
-            count++;
-            c1 = (ListNode<Integer>) c1.next;
+            s = (ListNode<Integer>) s.next;
         }
         ListNode<Integer> reverseL12 = reverseRecursion(l12);
         ListNode<Integer> result = null;
