@@ -2,25 +2,23 @@ package LinkedList;
 
 public class RemovingNthNodeFromEnd {
     static ListNode<Integer> removeNthFromEnd(ListNode<Integer> list, int n) {
-        if (n > 0) {
-            if (n >= list.size() - 1) {
-                n = list.size() - 1;
-            } else {
-                n = list.size() - n;
-            }
-            ListNode<Integer> cur = (ListNode<Integer>) list.head;
-            while (cur != null) {
-                if (n == 1) {
-                    ListNode<Integer> temp = (ListNode<Integer>) cur.next;
-                    cur.next = cur.next.next;
-                    cur.next.previous = cur;
-                    temp.next = null;
-                    return temp;
-                }
-                n--;
-                cur = (ListNode<Integer>) cur.next;
-            }
+        if (n >= list.size() - 1 || n <= 0) {
+            n = list.size() - 1;
+        } else {
+            n = list.size() - n;
         }
+        ListNode<Integer> cur = (ListNode<Integer>) list.head;
+        while (cur != null) {
+            if (n == 1) {
+                ListNode<Integer> temp = (ListNode<Integer>) cur.next;
+                cur.next = cur.next.next;
+                temp.next = null;
+                return temp;
+            }
+            n--;
+            cur = (ListNode<Integer>) cur.next;
+        }
+
         return null;
     }
 
@@ -32,9 +30,9 @@ public class RemovingNthNodeFromEnd {
         l1.addNode(50);
         l1.addNode(60);
 
-        ListNode<Integer> removedList = removeNthFromEnd(l1, 2);
+        ListNode<Integer> removedList = removeNthFromEnd(l1, -9);
         System.out.println(removedList != null ? removedList.data : null);
+        System.out.println("---------");
         l1.printNode();
-        l1.printNodeReverse();
     }
 }
