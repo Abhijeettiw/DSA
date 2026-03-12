@@ -4,6 +4,10 @@ public class ProductOfArrayWithoutSelf {
 
     public static void main(String[] args) {
         Integer[] nums = {5, 2, 3, 4};
+//        1,5,10,30  - left array
+//        24,12,4,1  - right array
+//        24,60,40,30  - Answer
+
         Integer[] res = new Integer[nums.length];
 //        without division but N*N
         for (int i = 0; i < nums.length; i++) {
