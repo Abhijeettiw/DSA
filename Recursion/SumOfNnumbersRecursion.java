@@ -1,3 +1,5 @@
+package Recursion;
+
 public class SumOfNnumbersRecursion {
     static Integer sum(Integer num, Integer sum) {
         if (num > 0) {

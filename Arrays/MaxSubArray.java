@@ -1,3 +1,5 @@
+package Arrays;
+
 public class MaxSubArray {
     public static void main(String[] args) {
 //        Kaden's Algo
