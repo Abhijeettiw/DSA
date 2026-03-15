@@ -8,7 +8,15 @@ public class SumOfNnumbersRecursion {
         return sum;
     }
 
+    static Integer sum2(Integer num) {
+        if (num > 0) {
+            return num + sum2(num-1);
+        }
+        return num;
+    }
+
     public static void main(String[] args) {
-        System.out.println(sum(10,0));
+        System.out.println(sum(10, 0));
+        System.out.println(sum2(10));
     }
 }
