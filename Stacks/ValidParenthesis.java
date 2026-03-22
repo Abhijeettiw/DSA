@@ -36,7 +36,7 @@ public class ValidParenthesis {
         } else return true;
     }
 
-    //    Using Stack
+    //    Using Stack & Map
     public static boolean checkValidity2(String input) {
         Map<String, String> parenthesisMap = new HashMap<>() {{
             put("{", "}");
@@ -53,15 +53,40 @@ public class ValidParenthesis {
                     return false;
                 }
             }
-            ;
         }
         return res;
     }
 
+    //    Using Stack
+    public static boolean checkValidity3(String input) {
+        Stack<String> parenthesisStack = new Stack<>();
+        if (input.length() % 2 == 0) {
+            for (String s : input.split("")) {
+                if (s.equals("{"))
+                    parenthesisStack.push("}");
+                else if (s.equals("["))
+                    parenthesisStack.push("]");
+                else if (s.equals("("))
+                    parenthesisStack.push(")");
+                else if (s.equals("}")) {
+                    if (!parenthesisStack.pop().equals(s))
+                        return false;
+                } else if (s.equals("]")) {
+                    if (!parenthesisStack.pop().equals(s))
+                        return false;
+                } else if (!parenthesisStack.pop().equals(s))
+                    return false;
+            }
+            return true;
+        } else return false;
+    }
+
     public static void main(String[] args) {
-        String input = "({}[])";
+        String input = "({}{[}])";
         System.out.println(checkValidity1(input));
         System.out.println("-------");
         System.out.println(checkValidity2(input));
+        System.out.println("-------");
+        System.out.println(checkValidity3(input));
     }
 }
