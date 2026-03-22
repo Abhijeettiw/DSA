@@ -60,29 +60,29 @@ public class ValidParenthesis {
     //    Using Stack
     public static boolean checkValidity3(String input) {
         Stack<String> parenthesisStack = new Stack<>();
-        if (input.length() % 2 == 0) {
-            for (String s : input.split("")) {
-                if (s.equals("{"))
-                    parenthesisStack.push("}");
-                else if (s.equals("["))
-                    parenthesisStack.push("]");
-                else if (s.equals("("))
-                    parenthesisStack.push(")");
-                else if (s.equals("}")) {
-                    if (!parenthesisStack.pop().equals(s))
-                        return false;
-                } else if (s.equals("]")) {
-                    if (!parenthesisStack.pop().equals(s))
-                        return false;
-                } else if (!parenthesisStack.pop().equals(s))
+        if (input.length() % 2 != 0)
+            return false;
+        for (String s : input.split("")) {
+            if (s.equals("{"))
+                parenthesisStack.push("}");
+            else if (s.equals("["))
+                parenthesisStack.push("]");
+            else if (s.equals("("))
+                parenthesisStack.push(")");
+            else if (s.equals("}")) {
+                if (!parenthesisStack.pop().equals(s))
                     return false;
-            }
-            return true;
-        } else return false;
+            } else if (s.equals("]")) {
+                if (!parenthesisStack.pop().equals(s))
+                    return false;
+            } else if (!parenthesisStack.pop().equals(s))
+                return false;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
-        String input = "({}{[}])";
+        String input = "({}[])";
         System.out.println(checkValidity1(input));
         System.out.println("-------");
         System.out.println(checkValidity2(input));
