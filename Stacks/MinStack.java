@@ -31,7 +31,5 @@ public class MinStack {
         add(1);
         add(3);
         System.out.println(getMin());
-        System.out.println("-----");
-        auStk.print();
     }
 }
