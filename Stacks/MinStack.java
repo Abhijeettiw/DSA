@@ -10,26 +10,38 @@ public class MinStack {
     static Stack<Integer> stk = new Stack<>();
     static Stack<Integer> auStk = new Stack<>();
 
-    static void add(Integer val){
+    static void add(Integer val) {
         if (auStk.head == null) {
             auStk.push(val);
         } else {
-            if (auStk.head.data > val){
+            if (auStk.peek() >= val) {
                 auStk.push(val);
             }
         }
         stk.push(val);
     }
 
-    static Integer getMin(){
+    static Integer remove() {
+        if (stk.peek().equals(auStk.peek())) {
+            auStk.pop();
+        }
+        return stk.pop();
+    }
+
+    static Integer getMin() {
         return auStk.peek();
     }
+
     //    static
     public static void main(String[] args) {
         add(2);
         add(5);
         add(1);
         add(3);
+        System.out.println(getMin());
+        remove();
+        remove();
+        remove();
         System.out.println(getMin());
     }
 }
