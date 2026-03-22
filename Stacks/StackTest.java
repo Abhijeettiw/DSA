@@ -9,5 +9,11 @@ public class StackTest {
         stk1.push(4);
         stk1.push(5);
         stk1.print();
+        System.out.println("---------");
+        System.out.println(stk1.pop());
+        System.out.println("---------");
+        stk1.print();
+        System.out.println("---------");
+        System.out.println(stk1.peek());
     }
 }

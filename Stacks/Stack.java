@@ -21,6 +21,21 @@ public class Stack<T> {
         this.head = stkNde;
     }
 
+    T pop() {
+        if (this.head != null) {
+            StackNode<T> r = this.head;
+            this.head = this.head.next;
+            r.next = null;
+            return r.data;
+        } else return null;
+    }
+
+    T peek() {
+        if (this.head != null) {
+            return this.head.data;
+        } else return null;
+    }
+
     void print() {
         StackNode<T> cur = this.head;
         while (cur != null) {
