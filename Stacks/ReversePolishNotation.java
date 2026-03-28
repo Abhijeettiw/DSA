@@ -2,7 +2,7 @@ package Stacks;
 
 public class ReversePolishNotation {
     public static void main(String[] args) {
-        String[] arr = {"4", "15", "5", "/", "+"};
+        String[] arr = {"4", "13", "5", "/", "+"};
 //        String[] arr = {"2", "1", "+", "3", "*"};
         Stack<Integer> stk = new Stack<>();
         for (int i = 0; i < arr.length; i++) {
