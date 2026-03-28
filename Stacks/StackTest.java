@@ -4,7 +4,9 @@ public class StackTest {
     public static void main(String[] args) {
         Stack<Integer> stk1 = new Stack<>();
         stk1.push(1);
+        System.out.println(stk1.size());
         stk1.push(2);
+        System.out.println(stk1.size());
         stk1.push(3);
         stk1.push(4);
         stk1.push(5);

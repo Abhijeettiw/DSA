@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class NextGreaterElementWithCircularLoop {
     public static void main(String[] args) {
         int[] arr = {5, 4, 7, 6, 1, 3};
-        java.util.Stack<Integer> stk = new java.util.Stack<>();
+        Stack<Integer> stk = new Stack<>();
         stk.push(0);
         int[] res = new int[arr.length];
         for (int i = 1; i < arr.length; i++) {
