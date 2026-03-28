@@ -24,23 +24,10 @@ public class Queue<T> {
     public T remove() {
         if (this.head == null) {
             return null;
-        } else if (size() == 1) {
-            QueueNode<T> cur = this.head;
-            this.head = null;
-            return cur.data;
         } else {
-            QueueNode<T> cur = this.head;
-            int count = 1;
-            QueueNode<T> rem = null;
-            while (cur != null) {
-                if (count == size() - 1) {
-                    rem = cur.next;
-                    cur.next = null;
-                }
-                count++;
-                cur = cur.next;
-            }
-            size--;
+            QueueNode<T> rem = this.head;
+            this.head = this.head.next;
+            rem.next = null;
             return rem.data;
         }
     }
