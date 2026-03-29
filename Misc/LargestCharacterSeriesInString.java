@@ -1,3 +1,5 @@
+package Misc;
+
 public class LargestCharacterSeriesInString {
     public static void main(String[] args) {
         String str = "abcabcdedefg";
