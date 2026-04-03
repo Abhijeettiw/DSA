@@ -2,6 +2,9 @@ package Arrays.SlidingWindow;
 
 public class LongestSubstringWithoutRepeatingCharacter {
     static Integer bruteForce(String str) {
+        if (str.length() == 0) {
+            return 0;
+        }
         int length = 1;
         int currLength = length;
         StringBuilder initial = new StringBuilder(str.charAt(0) + "");
