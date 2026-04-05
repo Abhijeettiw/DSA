@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class SlidingWindowMaximum {
     static int[] bruteForce(int[] arr, int k) {
         int[] res = new int[arr.length - k + 1];
-        int max = 0;
+        int max = Integer.MIN_VALUE;
         for (int i = 0; i < res.length; i++) {
             max = arr[i];
             int count = 1;
@@ -16,7 +16,7 @@ public class SlidingWindowMaximum {
                 count++;
             }
             res[i] = max;
-            max = 0;
+            max = Integer.MIN_VALUE;
         }
         return res;
     }
