@@ -1,24 +1,22 @@
 package Arrays.SlidingWindow;
 
 import java.util.Arrays;
-import java.util.Deque;
-import java.util.LinkedList;
 
 public class SlidingWindowMaximum {
     static int[] bruteForce(int[] arr, int k) {
         int[] res = new int[arr.length - k + 1];
-        Deque<Integer> max = new LinkedList<>();
+        int max = 0;
         for (int i = 0; i < res.length; i++) {
-            max.addFirst(arr[i]);
+            max = arr[i];
             int count = 1;
-            while (count < k && !max.isEmpty()) {
-                if (max.getFirst() < arr[i + count]) {
-                    max.addFirst(arr[i + count]);
-                    max.removeLast();
+            while (count < k) {
+                if (max < arr[i + count]) {
+                    max = arr[i + count];
                 }
                 count++;
             }
-            res[i] = max.removeFirst();
+            res[i] = max;
+            max = 0;
         }
         return res;
     }
