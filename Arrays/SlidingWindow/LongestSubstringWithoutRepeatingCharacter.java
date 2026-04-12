@@ -12,7 +12,7 @@ public class LongestSubstringWithoutRepeatingCharacter {
         while (b < str.length()) {
             if (initial.toString().contains(str.charAt(b) + "")) {
                 a = initial.indexOf(str.charAt(b) + "");
-                initial = new StringBuilder(initial.substring(a + 1, initial.length()) + str.charAt(b));
+                initial = new StringBuilder(initial.substring(a + 1) + str.charAt(b));
                 currLength = initial.length();
             } else {
                 initial.append(str.charAt(b));
