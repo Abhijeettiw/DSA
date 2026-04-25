@@ -1,6 +1,6 @@
 package Arrays.TwoPointerMethod;
 
-public class TrappingRainWater {
+public class TrappedRainWater {
 
     static int twoPointer(int[] arr) {
         int[] l_arr = new int[arr.length];
