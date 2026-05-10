@@ -21,10 +21,8 @@ public class Power {
         res = pow < 0 ? 1 / res : res;
         int p = pow < 0 ? -pow : pow;
         if (p > 1) {
-            int p1 = p / 2;
-            int p2 = p / 2;
-            Number r1 = powerRecursion(res, p1);
-            Number r2 = powerRecursion(res, p2);
+            Number r1 = powerRecursion(res, p / 2);
+            Number r2 = powerRecursion(res, p / 2);
             res = (double) r1 * (double) r2;
             res = p % 2 == 1 ? pow < 0 ? res * 1 / num : res * num : res;
         }
