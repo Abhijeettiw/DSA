@@ -20,17 +20,15 @@ public class Power {
         double res = num;
         res = pow < 0 ? 1 / res : res;
         int p = pow < 0 ? -pow : pow;
-        if (p > 1) {
-            Number r1 = powerRecursion(res, p / 2);
-            Number r2 = powerRecursion(res, p / 2);
-            res = (double) r1 * (double) r2;
-            res = p % 2 == 1 ? pow < 0 ? res * 1 / num : res * num : res;
-        }
+        Double r1 = powerRecursion(res, p / 2);
+        Double r2 = powerRecursion(res, p / 2);
+        res = r1 * r2;
+        res = p % 2 == 1 ? pow < 0 ? res * 1 / num : res * num : res;
         return res;
     }
 
     public static void main(String[] args) {
-        System.out.println(powerBruteforce(0.002, 100));
-        System.out.println(powerRecursion(0.002, 100));
+        System.out.println(powerBruteforce(3, 10));
+        System.out.println(powerRecursion(3, 10));
     }
 }
