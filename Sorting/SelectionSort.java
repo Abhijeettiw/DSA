@@ -30,9 +30,11 @@ public class SelectionSort {
                     break inner;
                 }
             }
-            int temp = arr[i];
-            arr[i] = arr[min];
-            arr[min] = temp;
+            if (min != i) {
+                int temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
+            }
         }
         System.out.println(Arrays.toString(arr));
     }
