@@ -16,7 +16,7 @@ import java.util.Arrays;
                 5, 10, 15, 45, 30, 20        iteration will be 0-3
             step 3
                 5, 10, 15, 20, 30, 45        iteration will be 0-2
-            Hence input sorted further iteration will not effect input
+            Hence input sorted further iteration will not affect input
 */
 public class SelectionSort {
     public static void main(String[] args) {
