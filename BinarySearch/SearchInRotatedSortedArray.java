@@ -17,7 +17,7 @@ public class SearchInRotatedSortedArray {
 
     public static void main(String[] args) {
         int[] arr = {8, 9, 10, 11, 1, 2, 3, 4, 5, 6, 7};
-        int target = 11;
+        int target = 6;
         int lowestEleIdx = 0;
         int s = 0, e = arr.length - 1, idx = -1;
         while (s <= e) {
@@ -31,7 +31,7 @@ public class SearchInRotatedSortedArray {
         }
         if (arr[lowestEleIdx] == target) {
             idx = lowestEleIdx;
-        } else if (arr[lowestEleIdx] < target && target <= arr[arr.length - 1]) {
+        } else if ( target <= arr[arr.length - 1]) {
             idx = binarySearch(arr, target, lowestEleIdx, arr.length - 1);
         } else {
             idx = binarySearch(arr, target, 0, lowestEleIdx - 1);
