@@ -15,12 +15,13 @@ public class KokoEatsBanana {
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 6, 7, 11};
+        int[] arr = {30,11,23,4,20};
+//        int[] arr = {3, 6, 7, 11};
         int completedHrs = 5;
         Arrays.sort(arr);
         int ans = 0;
         int start = 1, end = arr[arr.length - 1];
-        while (start < end) {
+        while (start <= end) {
             int mid = (end + start) / 2;
             int sp = computeHrs(arr, mid);
             if (completedHrs == sp) {
