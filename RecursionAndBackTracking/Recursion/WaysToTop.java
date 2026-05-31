@@ -1,4 +1,4 @@
-package Recursion;
+package RecursionAndBackTracking.Recursion;
 
 public class WaysToTop {
     static int recursion(int first, int next, int steps, int result) {

@@ -1,4 +1,4 @@
-package Recursion;
+package RecursionAndBackTracking.Recursion;
 
 public class UppercaseLetterInStringRecursion {
     static String singleUpperCase(String str, String res) {

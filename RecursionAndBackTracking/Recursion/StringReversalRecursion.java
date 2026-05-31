@@ -1,4 +1,4 @@
-package Recursion;
+package RecursionAndBackTracking.Recursion;
 
 public class StringReversalRecursion {
     static String reverse(String word,int length,String result){

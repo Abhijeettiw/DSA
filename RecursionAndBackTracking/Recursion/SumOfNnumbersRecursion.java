@@ -1,4 +1,4 @@
-package Recursion;
+package RecursionAndBackTracking.Recursion;
 
 public class SumOfNnumbersRecursion {
     static Integer sum(Integer num, Integer sum) {

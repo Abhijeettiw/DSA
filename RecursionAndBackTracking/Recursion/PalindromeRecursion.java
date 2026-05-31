@@ -1,4 +1,4 @@
-package Recursion;
+package RecursionAndBackTracking.Recursion;
 
 public class PalindromeRecursion {
     static Boolean isPalindrome(String str, Integer idx) {

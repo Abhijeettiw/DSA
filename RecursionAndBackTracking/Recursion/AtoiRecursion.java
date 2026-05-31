@@ -1,4 +1,4 @@
-package Recursion;
+package RecursionAndBackTracking.Recursion;
 
 public class AtoiRecursion {
     static Integer atoi(String num, Integer idx, Integer res) {

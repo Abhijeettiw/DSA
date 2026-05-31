@@ -1,4 +1,4 @@
-package Recursion;
+package RecursionAndBackTracking.Recursion;
 
 public class FactorialRecursion {
     static Long factorial(Integer num,Long res){

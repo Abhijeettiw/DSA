@@ -1,4 +1,4 @@
-package Recursion;
+package RecursionAndBackTracking.Recursion;
 
 import java.util.HashSet;
 import java.util.Set;

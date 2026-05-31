@@ -1,4 +1,4 @@
-package Recursion;
+package RecursionAndBackTracking.Recursion;
 
 public class DigitsInNumber {
     static Integer digits(Integer num, Integer count) {
