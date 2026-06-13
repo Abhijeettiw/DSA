@@ -7,12 +7,12 @@ public class SubsetsOfArray {
     static void subsetRecursion(int[] arr, int idx, List<Integer> cur, List<List<Integer>> res) {
         if (idx == arr.length) {
             res.add(new ArrayList<>(cur));
-            return;
+        } else {
+            cur.add(arr[idx]);
+            subsetRecursion(arr, idx + 1, cur, res);
+            cur.removeLast();
+            subsetRecursion(arr, idx + 1, cur, res);
         }
-        cur.add(arr[idx]);
-        subsetRecursion(arr, idx + 1, cur, res);
-        cur.removeLast();
-        subsetRecursion(arr, idx + 1, cur, res);
     }
 
     public static void main(String[] args) {
