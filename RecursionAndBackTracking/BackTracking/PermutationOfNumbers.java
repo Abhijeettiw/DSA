@@ -11,12 +11,12 @@ public class PermutationOfNumbers {
             res.add(new ArrayList<>(cur));
         } else {
             for (int i = 0; i < nums.length; i++) {
-                if (!used.containsKey(nums[i]) || used.get(nums[i]) == false) {
+                if (!used.containsKey(nums[i]) ) {
                     cur.add(nums[i]);
                     used.put(nums[i], true);
                     permutation(nums, idx + 1, cur, res, used);
                     cur.removeLast();
-                    used.put(nums[i], false);
+                    used.remove(nums[i]);
                 }
             }
         }
