@@ -7,7 +7,7 @@ public class ReverseNumber {
 
     static int reverseNumberRecursion(int num, int result) {
         if (num / 10 == 0) {
-            return num;
+            return result * 10 + num;
         }
         result = result * 10 + num % 10;
         return reverseNumberRecursion(num / 10, result);
