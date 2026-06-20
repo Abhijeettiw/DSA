@@ -6,7 +6,7 @@ public class CountZerosInNumber {
     }
 
     static int countZerosInNumber(int num, int cnt) {
-        if (num / 10 == 0) {
+        if (num == 0) {
             return cnt;
         }
         if (num % 10 == 0) {
@@ -16,6 +16,6 @@ public class CountZerosInNumber {
     }
 
     public static void main(String[] args) {
-        System.out.println(countZerosInNumber(102034));
+        System.out.println(countZerosInNumber(1020));
     }
 }
