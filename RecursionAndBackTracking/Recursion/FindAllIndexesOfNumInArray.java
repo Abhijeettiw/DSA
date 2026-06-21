@@ -1,6 +1,7 @@
 package RecursionAndBackTracking.Recursion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class FindAllIndexesOfNumInArray {
     static ArrayList<Integer> findAllIndexesOfNumInArray(int[] arr, int target) {
@@ -21,6 +22,6 @@ public class FindAllIndexesOfNumInArray {
         int[] arr = {1, 2, 4, 3, 5, 6, 7, 5, 4, 3};
         int target = 3;
         ArrayList<Integer> indexes = findAllIndexesOfNumInArray(arr, target);
-        indexes.forEach(System.out::println);
+        System.out.println(Arrays.toString(indexes.toArray()));
     }
 }
