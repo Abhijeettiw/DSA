@@ -5,7 +5,8 @@ import java.util.Arrays;
 
 public class FindAllIndexesOfNumInArray {
     static ArrayList<Integer> findAllIndexesOfNumInArray(int[] arr, int target) {
-        return findAllIndexesOfNumInArray(arr, target, 0, new ArrayList<>());
+//        return findAllIndexesOfNumInArray(arr, target, 0, new ArrayList<>());
+        return findAllIndexesOfNumInArray(arr, target, 0);
     }
 
     static ArrayList<Integer> findAllIndexesOfNumInArray(int[] arr, int target, int idx, ArrayList<Integer> result) {
@@ -16,6 +17,18 @@ public class FindAllIndexesOfNumInArray {
             result.add(idx);
         }
         return findAllIndexesOfNumInArray(arr, target, ++idx, result);
+    }
+
+    static ArrayList<Integer> findAllIndexesOfNumInArray(int[] arr, int target, int idx) {
+        if (idx == arr.length) {
+            return new ArrayList<>();
+        }
+        ArrayList<Integer> result = new ArrayList<>();
+        if (arr[idx] == target) {
+            result.add(idx);
+        }
+        result.addAll(findAllIndexesOfNumInArray(arr, target, ++idx));
+        return result;
     }
 
     public static void main(String[] args) {
