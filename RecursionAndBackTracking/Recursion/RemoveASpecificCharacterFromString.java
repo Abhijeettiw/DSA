@@ -2,19 +2,18 @@ package RecursionAndBackTracking.Recursion;
 
 public class RemoveASpecificCharacterFromString {
     static String removeASpecificCharacterFromString(String str, Character target) {
-        return removeASpecificCharacterFromString(str, target, 0);
+        return removeASpecificCharacterFromString(str, target, 0).toString();
     }
 
-    static String removeASpecificCharacterFromString(String str, Character target, int index) {
-        String result = "";
+    static StringBuilder removeASpecificCharacterFromString(String str, Character target, int index) {
+        StringBuilder result = new StringBuilder();
         if (index == str.length()) {
             return result;
         }
         if (!target.equals(str.charAt(index))) {
-            result = result + str.charAt(index);
+            result.append(str.charAt(index));
         }
-        String string = removeASpecificCharacterFromString(str, target, ++index);
-        return result + string;
+        return result.append(removeASpecificCharacterFromString(str, target, ++index));
 
     }
 
