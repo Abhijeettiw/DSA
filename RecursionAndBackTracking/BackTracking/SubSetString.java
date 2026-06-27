@@ -24,5 +24,6 @@ public class SubSetString {
     public static void main(String[] args) {
         List<String> strings = subSetString("abc");
         strings.forEach(System.out::println);
+        System.out.println("Total subsets - " + strings.size());
     }
 }
