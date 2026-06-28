@@ -23,7 +23,8 @@ public class MobileDigitLetterCombination {
 
     public static void main(String[] args) {
         String[] stringArr = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-        List<String> strings = mobileDigitLetterCombination("23", stringArr);
+        List<String> strings = mobileDigitLetterCombination("79", stringArr);
         strings.forEach(System.out::println);
+        System.out.println("Size of combination - " + strings.size());
     }
 }
