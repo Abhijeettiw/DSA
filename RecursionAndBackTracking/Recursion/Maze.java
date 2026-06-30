@@ -17,9 +17,15 @@ public class Maze {
             result.add(currentWay);
             return result;
         }
+//        Diagonal
+        if (startRow < maze.length && startRow < maze.length) {
+            result.addAll(ways(maze, startRow + 1, startCol + 1, endRow, endCol, currentWay + "C"));
+        }
+//        Down
         if (startRow < maze.length) {
             result.addAll(ways(maze, startRow + 1, startCol, endRow, endCol, currentWay + "D"));
         }
+//        Right
         if (startRow < maze.length) {
             result.addAll(ways(maze, startRow, startCol + 1, endRow, endCol, currentWay + "R"));
         }
