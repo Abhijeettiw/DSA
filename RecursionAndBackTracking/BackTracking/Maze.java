@@ -9,6 +9,12 @@ public class Maze {
         return ways(maze, startRow, startCol, endRow, endCol, "", obstracles);
     }
 
+    static List<String> ways(int[][] maze, int startRow, int startCol, int endRow, int endCol) {
+        List<int[]> obstracles = new ArrayList<>();
+        obstracles.add(new int[]{startRow, startCol});
+        return ways(maze, startRow, startCol, endRow, endCol, "", obstracles);
+    }
+
     static List<String> ways(int[][] maze, int startRow, int startCol, int endRow, int endCol, String currentWay, List<int[]> obstracles) {
         List<String> result = new ArrayList<>();
         if (startRow >= maze.length || startCol >= maze[0].length || startRow < 0 || startCol < 0) {
@@ -106,6 +112,7 @@ public class Maze {
         List<int[]> obstracles = new ArrayList<>() {{
             add(new int[]{1, 1});
         }};
-        System.out.println(ways(new int[3][3], 1, 0, 2, 2, obstracles));
+//        System.out.println(ways(new int[3][3], 1, 0, 2, 2, obstracles));
+        System.out.println(ways(new int[3][3], 0, 0, 2, 2));
     }
 }
