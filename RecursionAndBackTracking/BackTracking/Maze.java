@@ -106,6 +106,6 @@ public class Maze {
         List<int[]> obstracles = new ArrayList<>() {{
             add(new int[]{1, 1});
         }};
-        System.out.println(ways(new int[3][3], 0, 0, 2, 2, obstracles));
+        System.out.println(ways(new int[3][3], 1, 0, 2, 2, obstracles));
     }
 }
