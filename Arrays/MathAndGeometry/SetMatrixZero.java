@@ -27,7 +27,7 @@ public class SetMatrixZero {
         }
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
-                if (row.toString().contains(i+" ") || col.toString().contains(j+" ")) {
+                if (row.toString().contains(i + " ") || col.toString().contains(j + " ")) {
                     arr[i][j] = 0;
                 }
             }

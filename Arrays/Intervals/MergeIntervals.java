@@ -21,12 +21,12 @@ public class MergeIntervals {
         ArrayList<int[]> result = new ArrayList<>();
         result.add(intervals[0]);
         for (int i = 1; i < intervals.length; i++) {
-            if(result.getLast()[1]>=intervals[i][0]){
-                result.getLast()[1] = Math.max(result.getLast()[1],intervals[i][1]);
+            if (result.getLast()[1] >= intervals[i][0]) {
+                result.getLast()[1] = Math.max(result.getLast()[1], intervals[i][1]);
             } else {
                 result.add(intervals[i]);
             }
         }
-        result.forEach(a-> System.out.println(Arrays.toString(a)));
+        result.forEach(a -> System.out.println(Arrays.toString(a)));
     }
 }

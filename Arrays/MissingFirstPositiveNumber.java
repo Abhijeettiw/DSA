@@ -8,7 +8,7 @@ public class MissingFirstPositiveNumber {
     */
     public static void main(String[] args) {
         int missingNo = 1;
-        int[] arr = {7,8,9,11,12};
+        int[] arr = {7, 8, 9, 11, 12};
 //        int[] arr = {3, 4, -1, 1};
 //        int[] arr = {1,2,0};
 //        int[] arr = {2,4,1,8,5};

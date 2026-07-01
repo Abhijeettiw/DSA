@@ -15,7 +15,7 @@ public class PhoneNoLetterCombination {
     }
 
     public static void main(String[] args) {
-        String[] mapping = {"","","abc","def","ghi","jkl","mno","pqrs","wxyz"};
+        String[] mapping = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "wxyz"};
         ArrayList<String> result = new ArrayList<>();
         phoneNoLetterCombination("23", 0, mapping, result, "");
         int cnt = 0;

@@ -10,12 +10,12 @@ public class RemoveElementInArray {
             if (nums[i] == replace) {
                 nums[i] = Integer.MAX_VALUE;
             }
-            if(nums[i]!=Integer.MAX_VALUE){
+            if (nums[i] != Integer.MAX_VALUE) {
                 resultArr[index] = nums[i];
                 index++;
             }
         }
-        for (int i = 0; i < nums.length; i++){
+        for (int i = 0; i < nums.length; i++) {
             nums[i] = resultArr[i];
         }
         for (int n : nums) {

@@ -1,8 +1,5 @@
 package Arrays.SlidingWindow;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class LongestRepeatingCharacterReplacement {
 
     /*

@@ -60,7 +60,7 @@ public class Maze {
     }
 
     public static void main(String[] args) {
-        int[][] obstracles = {{1, 1},{0,2}};
+        int[][] obstracles = {{1, 1}, {0, 2}};
         System.out.println(ways(new int[3][3], 0, 0, 2, 2, obstracles));
     }
 }

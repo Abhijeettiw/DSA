@@ -2,8 +2,8 @@ package Queue;
 
 public class Queue<T> {
 
-    private QueueNode<T> head;
     static private Integer size = 0;
+    private QueueNode<T> head;
 
     Queue() {
     }

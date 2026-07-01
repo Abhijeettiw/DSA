@@ -14,7 +14,7 @@ public class PalindromeLinkedList {
     static ListNode<Integer> reverse(ListNode<Integer> list) {
         ListNode<Integer> cur = (ListNode<Integer>) list.head;
         ListNode<Integer> prev = null;
-        while (cur!=null){
+        while (cur != null) {
             ListNode<Integer> next = (ListNode<Integer>) cur.next;
             cur.next = prev;
             prev = cur;
@@ -35,8 +35,8 @@ public class PalindromeLinkedList {
         int i = 0;
         int count = size % 2 == 0 ? size / 2 : size / 2 + 1;
         ListNode<Integer> cur = (ListNode<Integer>) l1.head;
-        while (cur != null && i <= count){
-            if(i==count){
+        while (cur != null && i <= count) {
+            if (i == count) {
                 l2 = cur;
             }
             i++;
@@ -46,8 +46,8 @@ public class PalindromeLinkedList {
         ListNode<Integer> c1 = (ListNode<Integer>) reverse.head;
         ListNode<Integer> c2 = (ListNode<Integer>) l1.head;
         boolean isPalin = true;
-        while (c1 != null){
-            if (c1.data != c2.data){
+        while (c1 != null) {
+            if (c1.data != c2.data) {
                 isPalin = false;
                 break;
             }

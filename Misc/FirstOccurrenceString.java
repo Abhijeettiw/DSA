@@ -14,8 +14,8 @@ public class FirstOccurrenceString {
                 String[] hayStackArr = haystack.split("");
                 for (int i = 0; i < hayStackArr.length; i++) {
                     if (firstChar.equals(hayStackArr[i])) {
-                        String substring = haystack.substring(i, i+needleLength);
-                        if(needle.equals(substring)) {
+                        String substring = haystack.substring(i, i + needleLength);
+                        if (needle.equals(substring)) {
                             index = i;
                             break;
                         }

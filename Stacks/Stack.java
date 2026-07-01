@@ -1,19 +1,10 @@
 package Stacks;
 
 public class Stack<T> {
-    StackNode<T> head;
     static Integer size = 0;
+    StackNode<T> head;
 
     public Stack() {
-    }
-
-    public static class StackNode<T> {
-        T data;
-        StackNode<T> next;
-
-        StackNode(T data) {
-            this.data = data;
-        }
     }
 
     void push(T newData) {
@@ -48,6 +39,15 @@ public class Stack<T> {
         while (cur != null) {
             System.out.println(cur.data);
             cur = cur.next;
+        }
+    }
+
+    public static class StackNode<T> {
+        T data;
+        StackNode<T> next;
+
+        StackNode(T data) {
+            this.data = data;
         }
     }
 }

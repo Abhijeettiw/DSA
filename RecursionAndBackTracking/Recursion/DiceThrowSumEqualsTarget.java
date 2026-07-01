@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DiceThrowSumEqualsTarget {
-    static List<String> diceThrowSumEqualsTarget( int target) {
+    static List<String> diceThrowSumEqualsTarget(int target) {
         return diceThrowSumEqualsTarget("", target);
     }
 
@@ -21,7 +21,7 @@ public class DiceThrowSumEqualsTarget {
     }
 
     public static void main(String[] args) {
-        List<String> lists = diceThrowSumEqualsTarget( 4);
+        List<String> lists = diceThrowSumEqualsTarget(4);
         System.out.println(lists);
     }
 }

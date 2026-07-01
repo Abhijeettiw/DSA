@@ -45,17 +45,17 @@ public class ProductOfArrayWithoutSelf {
         int l_index = 0;
         int r_index = nums.length - 1;
         while (l_index < nums.length || r_index >= 0) {
-            if(l_index == 0 || r_index == nums.length-1){
+            if (l_index == 0 || r_index == nums.length - 1) {
                 l_array[l_index] = 1;
                 r_array[r_index] = 1;
             } else {
-                l_array[l_index] = l_array[l_index-1] * nums[l_index-1];
-                r_array[r_index] = r_array[r_index+1] * nums[r_index+1];
+                l_array[l_index] = l_array[l_index - 1] * nums[l_index - 1];
+                r_array[r_index] = r_array[r_index + 1] * nums[r_index + 1];
             }
             l_index++;
             r_index--;
         }
-        for(int i = 0;i<nums.length;i++){
+        for (int i = 0; i < nums.length; i++) {
             res3[i] = l_array[i] * r_array[i];
         }
         System.out.println(Arrays.toString(res3));

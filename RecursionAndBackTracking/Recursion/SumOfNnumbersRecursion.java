@@ -10,7 +10,7 @@ public class SumOfNnumbersRecursion {
 
     static Integer sum2(Integer num) {
         if (num > 0) {
-            return num + sum2(num-1);
+            return num + sum2(num - 1);
         }
         return num;
     }

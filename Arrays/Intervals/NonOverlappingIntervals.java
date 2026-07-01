@@ -15,7 +15,7 @@ public class NonOverlappingIntervals {
         int cnt = 0;
         int[] initial = intervals[0];
         for (int i = 1; i < intervals.length; i++) {
-            if (initial[1]>intervals[i][0]) {
+            if (initial[1] > intervals[i][0]) {
                 cnt++;
             } else {
                 initial = intervals[i];

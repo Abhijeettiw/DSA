@@ -31,7 +31,7 @@ public class SearchInRotatedSortedArray {
         }
         if (arr[lowestEleIdx] == target) {
             idx = lowestEleIdx;
-        } else if ( target <= arr[arr.length - 1]) {
+        } else if (target <= arr[arr.length - 1]) {
             idx = binarySearch(arr, target, lowestEleIdx, arr.length - 1);
         } else {
             idx = binarySearch(arr, target, 0, lowestEleIdx - 1);

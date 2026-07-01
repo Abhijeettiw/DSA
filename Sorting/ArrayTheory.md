@@ -3,7 +3,8 @@ Arrays
 - Arrays are continous data structure in which we cann determinethe location of a value stored in RAM.
 
 - Drawbacks
-    - Traditional static arrays has a fixed size ie size should be known at compile time. [Rectification in vector & arraylist]
+    - Traditional static arrays has a fixed size ie size should be known at compile
+      time. [Rectification in vector & arraylist]
         - ArrayList
             - When arraylist is created it has a size which is by default 0 & a capacity is N.
             - Eg:
@@ -28,5 +29,6 @@ Arrays
                     - Filling value in an array at all index
                     - Array.fill(array,5);
                     - Array.fill(array,startIndex,endIndex,val);
-    - Since size of arrays is fixed & is continous addinf element in begining & in mid is inefficient. [Rectification in linklist]
+    - Since size of arrays is fixed & is continous addinf element in begining & in mid is
+      inefficient. [Rectification in linklist]
 

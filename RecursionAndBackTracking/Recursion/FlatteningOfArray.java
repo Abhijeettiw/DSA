@@ -8,8 +8,7 @@ public class FlatteningOfArray {
         for (Object obj : objectArr) {
             if (obj instanceof Object[] innerObj) {
                 flatArray(innerObj, result);
-            }
-            else result.add(obj);
+            } else result.add(obj);
         }
         return List.of(result).toArray();
     }

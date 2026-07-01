@@ -74,7 +74,7 @@ public class RotateTheArray {
             rotation = rotation % arr2.length;
         reverseArray(arr2, 0, arr2.length - 1);
         reverseArray(arr2, 0, rotation - 1);
-        reverseArray(arr2, rotation , arr2.length - 1);
+        reverseArray(arr2, rotation, arr2.length - 1);
         System.out.println(Arrays.toString(arr2));
     }
 }

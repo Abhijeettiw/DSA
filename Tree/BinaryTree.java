@@ -3,52 +3,9 @@ package Tree;
 import java.util.Scanner;
 
 public class BinaryTree {
-    BinaryTree() {
-    }
-
     private TreeNode root;
 
-    private class TreeNode {
-        private int data;
-        private TreeNode left;
-        private TreeNode right;
-        private int height;
-
-        TreeNode(int data) {
-            this.data = data;
-        }
-
-        public TreeNode getLeft() {
-            return this.left;
-        }
-
-        public void setLeft(TreeNode node) {
-            this.left = node;
-        }
-
-        public TreeNode getRight() {
-            return this.right;
-        }
-
-        public void setRight(TreeNode node) {
-            this.right = node;
-        }
-
-        public Integer getData() {
-            return this.data;
-        }
-
-        public void setData(int data) {
-            this.data = data;
-        }
-
-        public int getHeight() {
-            return this.height;
-        }
-
-        public void setHeight(int height) {
-            this.height = height;
-        }
+    BinaryTree() {
     }
 
     void myInsertNode() {
@@ -106,5 +63,48 @@ public class BinaryTree {
 
     void display() {
 
+    }
+
+    private class TreeNode {
+        private int data;
+        private TreeNode left;
+        private TreeNode right;
+        private int height;
+
+        TreeNode(int data) {
+            this.data = data;
+        }
+
+        public TreeNode getLeft() {
+            return this.left;
+        }
+
+        public void setLeft(TreeNode node) {
+            this.left = node;
+        }
+
+        public TreeNode getRight() {
+            return this.right;
+        }
+
+        public void setRight(TreeNode node) {
+            this.right = node;
+        }
+
+        public Integer getData() {
+            return this.data;
+        }
+
+        public void setData(int data) {
+            this.data = data;
+        }
+
+        public int getHeight() {
+            return this.height;
+        }
+
+        public void setHeight(int height) {
+            this.height = height;
+        }
     }
 }

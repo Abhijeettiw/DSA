@@ -14,7 +14,7 @@ public class BinarySearchNormalAndRecursion {
             }
             if (array[mid] < target) left = mid + 1;
             if (array[mid] > target) right = mid - 1;
-            index = binarySearchRecursion(left,right,target,array);
+            index = binarySearchRecursion(left, right, target, array);
         }
         return index;
     }
@@ -34,7 +34,7 @@ public class BinarySearchNormalAndRecursion {
             if (array[mid] < target) left = mid + 1;
             else right = mid - 1;
         }
-        System.out.println(binarySearchRecursion(0,array.length-1,target,array));
-        System.out.println(Arrays.binarySearch(array,target));
+        System.out.println(binarySearchRecursion(0, array.length - 1, target, array));
+        System.out.println(Arrays.binarySearch(array, target));
     }
 }

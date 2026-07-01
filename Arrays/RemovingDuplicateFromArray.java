@@ -9,8 +9,8 @@ public class RemovingDuplicateFromArray {
         StringBuilder exist = new StringBuilder();
         for (int n = 0; n < nums.length; n++) {
             String str = "";
-            if (nums[n] >= 0) str = "+" + nums[n]+",";
-            else str = nums[n]+",";
+            if (nums[n] >= 0) str = "+" + nums[n] + ",";
+            else str = nums[n] + ",";
             if (exist.toString().contains(str)) {
                 nums[n] = Integer.MAX_VALUE;
             } else {

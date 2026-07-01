@@ -25,8 +25,8 @@ public class LongestPrefix {
                 }
             }
         }
-        for(String s2:str){
-            if(!s2.startsWith(sub))
+        for (String s2 : str) {
+            if (!s2.startsWith(sub))
                 return "";
         }
         return sub;

@@ -12,6 +12,6 @@ public class PalindromeRecursion {
     }
 
     public static void main(String[] args) {
-        System.out.println(isPalindrome("abcba",0));
+        System.out.println(isPalindrome("abcba", 0));
     }
 }

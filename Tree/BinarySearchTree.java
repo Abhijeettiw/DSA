@@ -8,6 +8,38 @@ public class BinarySearchTree {
     public BinarySearchTree() {
     }
 
+    public void insert() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Want to insert node ? (true/false)");
+        while (scanner.hasNextBoolean() && scanner.nextBoolean()) {
+            System.out.println("Enter value of node :");
+            root = insert(root, scanner.nextInt());
+            System.out.println("Want to insert node ? (true/false)");
+        }
+    }
+
+    private TreeNode insert(TreeNode node, int val) {
+        if (node == null) {
+            return new TreeNode(val);
+        } else if (node.data >= val) {
+            node.left = insert(node.left, val);
+        } else {
+            node.right = insert(node.right, val);
+        }
+        return node;
+    }
+
+    public void inOrderDisplay() {
+        inOrderDisplay(root);
+    }
+
+    private void inOrderDisplay(TreeNode node) {
+        if (node == null) return;
+        inOrderDisplay(node.left);
+        System.out.println(node.data);
+        inOrderDisplay(node.right);
+    }
+
     private class TreeNode {
         private int data;
         private TreeNode left;
@@ -49,36 +81,5 @@ public class BinarySearchTree {
         public void setHeight(int height) {
             this.height = height;
         }
-    }
-
-    public void insert() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Want to insert node ? (true/false)");
-        while (scanner.hasNextBoolean() && scanner.nextBoolean()) {
-            System.out.println("Enter value of node :");
-            root = insert(root,scanner.nextInt());
-            System.out.println("Want to insert node ? (true/false)");
-        }
-    }
-
-    private TreeNode insert(TreeNode node, int val) {
-        if (node == null) {
-            return new TreeNode(val);
-        } else if (node.data >= val) {
-            node.left = insert(node.left, val);
-        } else {
-            node.right = insert(node.right, val);
-        }
-        return node;
-    }
-
-    public void inOrderDisplay(){
-        inOrderDisplay(root);
-    }
-    private void  inOrderDisplay(TreeNode node){
-        if(node ==null) return;
-        inOrderDisplay(node.left);
-        System.out.println(node.data);
-        inOrderDisplay(node.right);
     }
 }

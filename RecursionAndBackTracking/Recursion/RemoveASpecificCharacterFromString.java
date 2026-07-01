@@ -19,6 +19,6 @@ public class RemoveASpecificCharacterFromString {
 
     public static void main(String[] args) {
         String str = "character";
-        System.out.println(removeASpecificCharacterFromString(str,'a'));
+        System.out.println(removeASpecificCharacterFromString(str, 'a'));
     }
 }
