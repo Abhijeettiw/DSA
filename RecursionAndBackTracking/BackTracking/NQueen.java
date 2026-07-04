@@ -78,7 +78,7 @@ public class NQueen {
             queen.forEach(q -> {
                 System.out.println(Arrays.toString(q));
             });
-
         });
+        System.out.println("No of ways - " + queens.size());
     }
 }
