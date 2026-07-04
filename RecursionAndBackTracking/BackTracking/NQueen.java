@@ -69,8 +69,8 @@ public class NQueen {
 
     public static void main(String[] args) {
         boolean[][] board = new boolean[4][4];
-        List<List<int[]>> queens = nQueen(board, 3);
-//        List<List<int[]>> queens = nQueen(, 4);
+//        List<List<int[]>> queens = nQueen(board, 3);
+        List<List<int[]>> queens = nQueen(5);
         queens.forEach(queen -> {
             System.out.println("Path");
             queen.forEach(q -> {
