@@ -59,7 +59,9 @@ public class NQueen {
                 current.add(new int[]{row, column});
                 board[row][column] = true;
                 result.addAll(nQueen(board, n - 1, current, row + 1, 0));
+                current.removeLast();
                 board[row][column] = false;
+                result.addAll(nQueen(board, n, current, row, column + 1));
             } else {
                 result.addAll(nQueen(board, n, current, row, column + 1));
             }
