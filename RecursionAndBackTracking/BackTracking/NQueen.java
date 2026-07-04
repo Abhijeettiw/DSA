@@ -8,8 +8,9 @@ public class NQueen {
     static List<List<int[]>> nQueen(boolean[][] board, int n) {
         List<List<int[]>> result = new ArrayList<>();
         for (int r = 0; r < board.length; r++) {
-
-            result.addAll(nQueen(board, n, new ArrayList<>(), r, 0));
+            for (int c = 0; c < board[r].length; c++) {
+                result.addAll(nQueen(board, n, new ArrayList<>(), r, c));
+            }
         }
         return result;
     }
@@ -67,10 +68,12 @@ public class NQueen {
     }
 
     public static void main(String[] args) {
-        List<List<int[]>> queens = nQueen(4);
-        queens.forEach(queen->{
+        boolean[][] board = new boolean[4][4];
+        List<List<int[]>> queens = nQueen(board, 3);
+//        List<List<int[]>> queens = nQueen(, 4);
+        queens.forEach(queen -> {
             System.out.println("Path");
-            queen.forEach(q->{
+            queen.forEach(q -> {
                 System.out.println(Arrays.toString(q));
             });
 
