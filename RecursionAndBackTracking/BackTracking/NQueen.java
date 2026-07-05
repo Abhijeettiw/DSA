@@ -61,7 +61,6 @@ public class NQueen {
                 result.addAll(nQueen(board, n - 1, current, row + 1, 0));
                 current.removeLast();
                 board[row][column] = false;
-                result.addAll(nQueen(board, n, current, row, column + 1));
             } else {
                 result.addAll(nQueen(board, n, current, row, column + 1));
             }
@@ -72,7 +71,7 @@ public class NQueen {
     public static void main(String[] args) {
         boolean[][] board = new boolean[4][4];
 //        List<List<int[]>> queens = nQueen(board, 3);
-        List<List<int[]>> queens = nQueen(5);
+        List<List<int[]>> queens = nQueen(4);
         queens.forEach(queen -> {
             System.out.println("Path");
             queen.forEach(q -> {
