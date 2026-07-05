@@ -18,9 +18,11 @@ public class NQueen {
     static List<List<int[]>> nQueen(int n) {
         boolean[][] board = new boolean[n][n];
         List<List<int[]>> result = new ArrayList<>();
-        for (int c = 0; c < board.length; c++) {
-            result.addAll(nQueen(board, n, new ArrayList<>(), 0, c));
-        }
+//        for (int c = 0; c < board.length; c++) {
+//            result.addAll(nQueen(board, n, new ArrayList<>(), 0, c));
+//        }
+        result.addAll(nQueen(board, n, new ArrayList<>(), 0, 0));
+
         return result;
     }
 
@@ -61,9 +63,8 @@ public class NQueen {
                 result.addAll(nQueen(board, n - 1, current, row + 1, 0));
                 current.removeLast();
                 board[row][column] = false;
-            } else {
-                result.addAll(nQueen(board, n, current, row, column + 1));
             }
+            result.addAll(nQueen(board, n, current, row, column + 1));
         }
         return result;
     }
@@ -73,11 +74,13 @@ public class NQueen {
 //        List<List<int[]>> queens = nQueen(board, 3);
         List<List<int[]>> queens = nQueen(4);
         queens.forEach(queen -> {
-            System.out.println("Path");
+            System.out.println();
+            System.out.println("Pattern");
             queen.forEach(q -> {
-                System.out.println(Arrays.toString(q));
+                System.out.print(Arrays.toString(q));
             });
         });
+        System.out.println();
         System.out.println("No of ways - " + queens.size());
     }
 }
