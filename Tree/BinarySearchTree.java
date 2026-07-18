@@ -26,7 +26,55 @@ public class BinarySearchTree {
         } else {
             node.right = insert(node.right, val);
         }
+        node.setHeight(getHeight(node));
+        return rotate(node);
+    }
+
+    private TreeNode rotate(TreeNode node) {
+//        Left heavy
+        if (getHeight(node.left) - getHeight(node.right) > 1) {
+//            Right rotate
+            if (getHeight(node.left.left) - getHeight(node.left.right) > 0) {
+                return rightRotate(node);
+            }
+//            Left rotate
+            if (getHeight(node.left.right) - getHeight(node.left.left) > 0) {
+                return leftRotate(node);
+            }
+
+        }
+//        Right heavy
+        if (getHeight(node.right) - getHeight(node.left) > 1) {
+//            Right rotate
+            if (getHeight(node.right.left) - getHeight(node.right.right) > 0) {
+                return rightRotate(node);
+            }
+//            Left rotate
+            if (getHeight(node.right.right) - getHeight(node.right.left) > 0) {
+                return leftRotate(node);
+            }
+        }
         return node;
+    }
+
+    private TreeNode rightRotate(TreeNode node) {
+        TreeNode c = node.left;
+        TreeNode cr = c.right;
+        c.right = node;
+        node.left = cr;
+        c.height = getHeight(c);
+        node.height = getHeight(node);
+        return c;
+    }
+
+    private TreeNode leftRotate(TreeNode node) {
+        TreeNode c = node.right;
+        TreeNode cl = c.left;
+        c.left = node;
+        node.right = cl;
+        c.height = getHeight(c);
+        node.height = getHeight(node);
+        return c;
     }
 
     public void inOrderDisplay() {
@@ -38,6 +86,13 @@ public class BinarySearchTree {
         inOrderDisplay(node.left);
         System.out.println(node.data);
         inOrderDisplay(node.right);
+    }
+
+    private int getHeight(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return Math.max(getHeight(node.left), getHeight(node.right)) + 1;
     }
 
     private class TreeNode {
