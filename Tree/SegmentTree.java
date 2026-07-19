@@ -88,6 +88,8 @@ public class SegmentTree {
         node.setData(leftNode.getData() + rightNode.getData());
         node.left = leftNode;
         node.right = rightNode;
+        node.setInterval(new int[]{start, end});
+        node.setOperationType(operationType);
         return node;
     }
 
@@ -99,5 +101,49 @@ public class SegmentTree {
         return this.root;
     }
 
+    public int getResult(int start, int end) {
+        return getResult(root, start, end);
+    }
+
+    private int getResult(TreeNode node, int start, int end) {
+        int result = 0;
+        if (node == null) {
+            return 0;
+        }
+        int startInterval = node.getInterval()[0];
+        int endInterval = node.getInterval()[1];
+        if (end < startInterval || start > endInterval) {
+            return result;
+        } else if (start == startInterval && end == endInterval) {
+            return result + node.getData();
+        } else {
+            int mid = (startInterval + endInterval) / 2;
+            return getResult(node.left, start, mid) + getResult(node.right, mid + 1, end);
+        }
+    }
+
+    public void updateTree(int index, int val) {
+        updateTree(root, index, val);
+    }
+
+    private void updateTree(TreeNode node, int index, int val) {
+        if (node == null) {
+            return;
+        }
+        int start = node.getInterval()[0];
+        int end = node.getInterval()[1];
+        if (start == index && end == index) {
+            node.setData(val);
+        } else {
+            if (node.left != null) {
+                updateTree(node.left, index, val);
+                node.setData(node.left.getData());
+            }
+            if (node.right != null) {
+                updateTree(node.right, index, val);
+                node.setData(node.getData() + node.right.getData());
+            }
+        }
+    }
 
 }
