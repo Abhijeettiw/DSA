@@ -1,4 +1,4 @@
-package RecursionAndBackTracking.Recursion;
+package Misc;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;

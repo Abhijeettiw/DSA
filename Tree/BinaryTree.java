@@ -1,6 +1,6 @@
 package Tree;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class BinaryTree {
     private TreeNode root;
@@ -61,8 +61,33 @@ public class BinaryTree {
         }
     }
 
-    void display() {
+    public List<List<Integer>> breadthFirstSearch() {
+        Queue<TreeNode> bfsQueue = new LinkedList<>();
+        bfsQueue.offer(root);
+        return breadthFirstSearch(bfsQueue, new ArrayList<>());
+    }
 
+    private List<List<Integer>> breadthFirstSearch(Queue<TreeNode> bfsQueue, List<Integer> currentList) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (bfsQueue.isEmpty()) {
+            return result;
+        }
+        int size = bfsQueue.size();
+        for (int i = 0; i < size; i++) {
+            TreeNode node = bfsQueue.poll();
+            if (node != null) {
+                currentList.add(node.data);
+                if (node.left != null) {
+                    bfsQueue.offer(node.left);
+                }
+                if (node.right != null) {
+                    bfsQueue.offer(node.right);
+                }
+            }
+        }
+        result.add(currentList);
+        result.addAll(breadthFirstSearch(bfsQueue, new ArrayList<>()));
+        return result;
     }
 
     private class TreeNode {
