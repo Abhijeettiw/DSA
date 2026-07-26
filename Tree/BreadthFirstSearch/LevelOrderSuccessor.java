@@ -7,11 +7,7 @@ import java.util.Queue;
 
 public class LevelOrderSuccessor {
     static Integer levelOrderSuccessor(Queue<BinaryTree.TreeNode> q, int target) {
-        if (q.isEmpty()) {
-            return null;
-        }
-        int size = q.size();
-        for (int i = 0; i < size; i++) {
+        while (!q.isEmpty()) {
             BinaryTree.TreeNode node = q.poll();
             if (node != null) {
                 if (node.getLeft() != null) {
@@ -28,7 +24,7 @@ public class LevelOrderSuccessor {
                 }
             }
         }
-        return levelOrderSuccessor(q, target);
+        return null;
     }
 
     public static void main(String[] args) {
@@ -36,6 +32,6 @@ public class LevelOrderSuccessor {
         tree.populate();
         Queue<BinaryTree.TreeNode> q = new LinkedList<>();
         q.offer(tree.getRoot());
-        System.out.println(levelOrderSuccessor(q,2));
+        System.out.println(levelOrderSuccessor(q,3));
     }
 }
