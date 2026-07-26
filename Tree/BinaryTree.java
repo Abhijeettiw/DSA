@@ -5,7 +5,7 @@ import java.util.*;
 public class BinaryTree {
     private TreeNode root;
 
-    BinaryTree() {
+    public BinaryTree() {
     }
 
     void myInsertNode() {
@@ -34,7 +34,7 @@ public class BinaryTree {
     }
 
     //    From internet
-    void populate() {
+    public void populate() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter value for root");
         root = new TreeNode(scanner.nextInt());
@@ -90,7 +90,7 @@ public class BinaryTree {
         return result;
     }
 
-    private class TreeNode {
+    public class TreeNode {
         private int data;
         private TreeNode left;
         private TreeNode right;
@@ -131,5 +131,9 @@ public class BinaryTree {
         public void setHeight(int height) {
             this.height = height;
         }
+    }
+
+    public TreeNode getRoot() {
+        return this.root;
     }
 }
