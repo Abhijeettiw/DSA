@@ -39,6 +39,6 @@ public class CousinsInBinaryTree {
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
         tree.populate();
-        System.out.println(cousinsInBinaryTree(tree, 4, 5));
+        System.out.println(cousinsInBinaryTree(tree, 2, 3));
     }
 }
