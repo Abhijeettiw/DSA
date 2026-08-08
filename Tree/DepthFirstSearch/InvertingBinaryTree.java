@@ -7,7 +7,6 @@ public class InvertingBinaryTree {
         if (node == null) {
             return node;
         }
-
         BinaryTree.TreeNode left = node.getLeft();
         node.setLeft(node.getRight());
         node.setRight(left);
