@@ -1,0 +1,4 @@
+- Heap data is stored in array but represented in form of complete binary tree.
+- Representation in complete binary tree means all node has 2 nodes & filling of nodes starts from left.
+- If parent index in array is i then left element will be present in 2i index & right node will be on 2i+1 index.
+- Parent of element in ith index will be on i/2 index.
