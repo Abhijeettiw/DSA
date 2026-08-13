@@ -26,7 +26,11 @@ public class MinHeap extends Heaps {
 
     @Override
     Integer poll() {
-        return null;
+        Integer data = innerList.removeFirst();
+        for (int i = 0; i < innerList.size(); i++) {
+            poll(i);
+        }
+        return data;
     }
 
     private void offer(Integer val, int parentIndex, int childIndex) {
@@ -39,5 +43,30 @@ public class MinHeap extends Heaps {
         }
     }
 
+    void poll(int index) {
+        if (!isValidIndex(index)) {
+            return;
+        }
+        int leftIndex = (index * 2) + 1;
+
+        if (isValidIndex(leftIndex)) {
+            Integer temp = innerList.get(leftIndex);
+            if (temp < innerList.get(index)) {
+                innerList.set(leftIndex, innerList.get(index));
+                innerList.set(index, temp);
+                poll(leftIndex);
+            }
+            int rightIndex = leftIndex + 1;
+            if (isValidIndex(rightIndex)) {
+                temp = innerList.get(rightIndex);
+                if (temp < innerList.get(index)) {
+                    innerList.set(rightIndex, innerList.get(index));
+                    innerList.set(index, temp);
+                    poll(rightIndex);
+                }
+            }
+
+        }
+    }
 
 }
