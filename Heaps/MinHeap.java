@@ -27,9 +27,9 @@ public class MinHeap extends Heaps {
     @Override
     Integer poll() {
         Integer data = innerList.removeFirst();
-        for (int i = 0; i < innerList.size(); i++) {
-            poll(i);
-        }
+        Integer last = innerList.removeLast();
+        innerList.addFirst(last);
+        poll(0);
         return data;
     }
 
