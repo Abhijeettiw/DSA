@@ -65,7 +65,6 @@ public class MinHeap extends Heaps {
                     poll(rightIndex);
                 }
             }
-
         }
     }
 
