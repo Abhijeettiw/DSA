@@ -97,13 +97,13 @@ public class BinaryTree {
         return Math.max(height(node.left), height(node.right)) + 1;
     }
 
-    public class TreeNode {
+    public static class TreeNode {
         private int data;
         private TreeNode left;
         private TreeNode right;
         private int height;
 
-        TreeNode(int data) {
+        public TreeNode(int data) {
             this.data = data;
         }
 
