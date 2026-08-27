@@ -7,8 +7,7 @@ import java.util.List;
 
 public class GetKthSmallestFromBST {
 
-    static int cnt = 0;
-
+//    My solution
     static Integer getKthSmallestFromBST(BinarySearchTree.TreeNode node, int k) {
         List<Integer> allElementBst = getKthSmallestFromBST(node);
         if (k > allElementBst.size()) {
@@ -28,7 +27,9 @@ public class GetKthSmallestFromBST {
         return res;
     }
 
-//    From course
+    //    From course
+    static int cnt = 0;
+
     static Integer kthSmallestFromBST(BinarySearchTree.TreeNode node, int k) {
         BinarySearchTree.TreeNode treeNode = kthSmallestFromBSTHelper(node, k);
         if (treeNode != null) {
