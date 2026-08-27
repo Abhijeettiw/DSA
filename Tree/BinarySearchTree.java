@@ -5,6 +5,14 @@ import java.util.Scanner;
 public class BinarySearchTree {
     private TreeNode root;
 
+    public TreeNode getRoot() {
+        return root;
+    }
+
+    public void setRoot(TreeNode root) {
+        this.root = root;
+    }
+
     public BinarySearchTree() {
     }
 
@@ -57,7 +65,7 @@ public class BinarySearchTree {
         return node;
     }
 
-    private TreeNode rightRotate(TreeNode node) {
+    public static TreeNode rightRotate(TreeNode node) {
         TreeNode c = node.left;
         TreeNode cr = c.right;
         c.right = node;
@@ -88,14 +96,14 @@ public class BinarySearchTree {
         inOrderDisplay(node.right);
     }
 
-    private int getHeight(TreeNode node) {
+    private static int getHeight(TreeNode node) {
         if (node == null) {
             return 0;
         }
         return Math.max(getHeight(node.left), getHeight(node.right)) + 1;
     }
 
-    private class TreeNode {
+    public class TreeNode {
         private int data;
         private TreeNode left;
         private TreeNode right;
