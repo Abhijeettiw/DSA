@@ -30,8 +30,41 @@ public class CreateTreeFromPreOrderAndInOrder {
         return node;
     }
 
+    static String serializeTreeNodesInString(BinaryTree.TreeNode node) {
+        StringBuilder res = new StringBuilder();
+        if (node == null) {
+            res.append("null").append(",");
+            return res.toString();
+        }
+        res.append(node.getData()).append(",");
+        res.append(serializeTreeNodesInString(node.getLeft()));
+        res.append(serializeTreeNodesInString(node.getRight()));
+        return res.toString();
+    }
+    static String serializedTree = "";
+    static BinaryTree.TreeNode deSerializeTreeNodesInString() {
+        BinaryTree.TreeNode node = null;
+        if (serializedTree.isEmpty()) {
+            return node;
+        }
+        String dataString = serializedTree.substring(0, serializedTree.indexOf(","));
+        serializedTree = serializedTree.substring(serializedTree.indexOf(",") + 1);
+        if (dataString.equals("null")) {
+            return node;
+        }
+        int data = Integer.parseInt(dataString);
+        node = new BinaryTree.TreeNode(data);
+        node.setLeft(deSerializeTreeNodesInString());
+        node.setRight(deSerializeTreeNodesInString());
+        return node;
+    }
+
     public static void main(String[] args) {
         BinaryTree.TreeNode root = createTreeFromPreOrderAndInOrder(new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7});
         System.out.println(root);
+        serializedTree = serializeTreeNodesInString(root);
+        System.out.println(serializedTree);
+        BinaryTree.TreeNode deSerializeTreeNode = deSerializeTreeNodesInString();
+        System.out.println(deSerializeTreeNode);
     }
 }
