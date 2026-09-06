@@ -1,4 +1,6 @@
-package Tree;
+package Tree.DepthFirstSearch;
+
+import Tree.BinaryTree;
 
 import java.util.Arrays;
 
