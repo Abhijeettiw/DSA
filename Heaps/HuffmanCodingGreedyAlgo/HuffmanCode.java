@@ -111,7 +111,7 @@ public class HuffmanCode {
     }
 
     public static void main(String[] args) {
-        Map<String, Object> encoder = encode("abhijeet");
+        Map<String, Object> encoder = encode("abbccda");
         String[] code = (String[]) encoder.get("code");
         @SuppressWarnings({"", "unchecked"})
         Map<String, String> decoder = (Map<String, String>) encoder.get("decoder");
