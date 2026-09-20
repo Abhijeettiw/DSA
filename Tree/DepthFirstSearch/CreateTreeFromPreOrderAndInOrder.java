@@ -25,7 +25,7 @@ public class CreateTreeFromPreOrderAndInOrder {
         );
         node.setRight(
                 createTreeFromPreOrderAndInOrder(
-                        Arrays.copyOfRange(preOrder, index + 1, inOrder.length),
+                        Arrays.copyOfRange(preOrder, index + 1, preOrder.length),
                         Arrays.copyOfRange(inOrder, index + 1, inOrder.length)
                 )
         );
