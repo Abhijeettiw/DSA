@@ -4,6 +4,7 @@ import Tree.BinarySearchTree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class GetKthSmallestFromBST {
 
@@ -52,6 +53,28 @@ public class GetKthSmallestFromBST {
         }
         return kthSmallestFromBSTHelper(node.getRight(), k);
 
+    }
+
+
+    static Integer kthSmallestFromHeap(BinarySearchTree.TreeNode node, int k) {
+        PriorityQueue<Integer> res = new PriorityQueue<>();
+        kthSmallestFromHeap(node.getLeft(), k, 0, res);
+        while (res.size() > 1) {
+            res.poll();
+        }
+        return res.poll();
+    }
+
+    static void kthSmallestFromHeap(BinarySearchTree.TreeNode node, int k, int n, PriorityQueue<Integer> q) {
+        if (node == null) {
+            return;
+        }
+        n = n + 1;
+        if (n <= k) {
+            kthSmallestFromHeap(node.getLeft(), k, n, q);
+            q.offer(node.getData());
+            kthSmallestFromHeap(node.getRight(), k, n, q);
+        }
     }
 
     public static void main(String[] args) {
