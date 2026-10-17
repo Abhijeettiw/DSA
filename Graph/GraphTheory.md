@@ -1,0 +1,35 @@
+Theory
+
+- Graph need not be an enclosed structure it could be an open structure too like Tree is also a type of graph.
+- Graph nodes are called as Vertex.
+- Link between 2 nodes is known as Edge.
+- Edge can be Unidirectional or Bidirectional.
+- Types
+ - Directed
+   - Edges are unidirectional
+   - Indegree
+     - Number of incoming edges.
+   - Outdegree
+     - Number of outgoing edges.
+ - Un-directed
+   - Edges are bidirectional
+   - Number of edges attached to a node is known as degree of node for undirected graph.
+     - Total degree of graph is twice of number of edges because every node has 2 edges.
+   - Data storing in graph is done in 
+     - Matrix (Adjacency Matrix)
+       - Need to check whether a data is 1-based data or other.
+       - Takes a lot of space hence not advisable for large graph.
+       - 2D array of n+1 * n+1.
+       - In case of weighted graph at position weight is stored else 1 will be stored.
+     - List (Adjacency List)
+       - Has ArrayList of ArrayList ie ArrayList<ArrayList<>>. Size must be n+1;
+       - In case of weighted graph the inner ArrayList stores pair [<node>,<weight>].
+- Cyclic graph
+    - When graph starts & ends at one vertex via some path.
+    - Possible in both directed or un-directed graph.
+    - Reverse of this is a-cyclic graph. A a-cyclic graph also known as DAG.
+- A same node cannot appear twice in a path & all nodes in path must be connected.
+- Edge weights
+  - Quantity assigned to edges.
+  - It could be any number.
+  - Default edge weight is 1 always.
