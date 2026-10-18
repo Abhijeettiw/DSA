@@ -33,3 +33,6 @@ Theory
   - Quantity assigned to edges.
   - It could be any number.
   - Default edge weight is 1 always.
+- Components
+  - When there one or more nodes or group of node(connected among themselves) which are not connected to each other known as components.
+  - To traverse each and every component we have a visited array of size n+1. We use to keep a track on all visited nodes. 
