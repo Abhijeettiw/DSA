@@ -1,7 +1,6 @@
 package Graph.Undirected;
 
-import Graph.Directed.DirectedAdjacencyMatrixGraph;
-
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class UndirectedGraphTest {
@@ -15,5 +14,9 @@ public class UndirectedGraphTest {
         for (int[] ints : graph.innerArray) {
             System.out.println(Arrays.toString(ints));
         }
+        UndirectedAdjacencyListGraph graph1 = new UndirectedAdjacencyListGraph();
+        ArrayList<ArrayList<Integer>> graph2Result = graph1.createGraph(input);
+        System.out.println("Undirected list graph element");
+        System.out.println(graph2Result);
     }
 }
